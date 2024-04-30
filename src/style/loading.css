@@ -1,0 +1,38 @@
+.spinner-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: relative; /* 추가 */
+  }
+  
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid red;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    position: absolute; /* 추가 */
+    top: 40%; /* 추가 */
+
+    transform: translate(-50%, -50%); /* 추가 */
+}
+
+.loading-name {
+    text-align: center;
+    color: red;
+    margin-top: 55px;
+    left: 50%; /* 추가 */
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}

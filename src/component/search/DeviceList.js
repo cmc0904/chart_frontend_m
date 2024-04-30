@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "../../style/search.css";
 import DeviceButton from './DeviceButton';
 import axios from 'axios';
+import LoadingSpinner from '../loading/LoadingSpinner';
 
 
 function DeviceList({setDevice, search, deviceName}) {
@@ -9,9 +10,9 @@ function DeviceList({setDevice, search, deviceName}) {
     const [deviceNameList, setDeviceNameList] = useState([]);
     
 
-    useEffect(()=>{
+    useEffect(() => {
         getAllDeviceName();
-    }, [])
+    }, []);
 
     const getAllDeviceName = async () => {
         try {
@@ -31,12 +32,17 @@ function DeviceList({setDevice, search, deviceName}) {
 
     return (
         <>
-            <div className="device-list">
-                <div className="device-scorll-box">
-                    {deviceNameList.map((item, idx) => (
-                        <DeviceButton key={idx} handleDeviceButton={handleDeviceButton} item={item}></DeviceButton>
-                    ))}
-                </div>
+            <div className="device-list" style={{"width" : "100%"}}>
+                {deviceNameList.length === 0 ? 
+                    <LoadingSpinner title={"모든 장비 이름 불러오는 중  . . ."}></LoadingSpinner>
+                :
+                    <div className="device-scorll-box">
+                        {deviceNameList.map((item, idx) => (
+                            <DeviceButton key={idx} handleDeviceButton={handleDeviceButton} item={item}></DeviceButton>
+                        ))}
+                    </div>
+                }
+
             </div>
         </>
     )
