@@ -1,0 +1,23 @@
+.card {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    margin: 10px;
+    box-shadow: 2px 2px 5px #aaaaaa;
+    border-radius: 5px;
+    display: flex;
+    flex-direction: row;
+    font-size: 20px;
+}
+
+.card-name {
+    flex: 4;
+}
+
+.card-value {
+    color: red;
+}
+
+.card > div {
+    margin-top: 10px;
+}
