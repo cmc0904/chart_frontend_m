@@ -1,10 +1,10 @@
 import "../style/header.css";
 
-function Header({headerName}) {
+function Header({headerName, headerAction}) {
   return (
     <>
       <header id="header">
-        <span>{headerName}</span>
+        <span><a onClick={headerAction}>{headerName}</a></span>
       </header>
     </>
   )

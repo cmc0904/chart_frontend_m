@@ -8,6 +8,7 @@
     background-color: white;
     padding: 20px;
     box-shadow: 2px 2px 5px #aaaaaa;
+    margin-top: 10px;
     border-radius: 5px;
     font-size: 20px;
     height: 400px;
@@ -29,13 +30,8 @@
 .grid-item:nth-child(4) {
     margin-right: 10px;
     margin-bottom: 20px;
+}
 
-}
-  
-#device-cpu {
-    margin-top: 15px;
-    height: 90%;
-}
 
 
 .grid-item > div:nth-child(2) {
