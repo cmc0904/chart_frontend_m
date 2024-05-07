@@ -13,6 +13,9 @@ function DeviceCPUChart({ showedChartData }) {
         am4core.useTheme(am4themes_animated);
 
         var chart = am4core.create("device-cpu", am4charts.XYChart);
+        chart.exporting.timeoutDelay = 5000;
+
+
         chart.exporting.menu = new am4core.ExportMenu();
         chart.exporting.filePrefix = "CPU_사용량_TOP10"; 
 

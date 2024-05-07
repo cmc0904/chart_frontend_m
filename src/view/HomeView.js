@@ -34,19 +34,17 @@ function HomeView() {
 
 
   const getChartData = async () => {
+    setSearchResult([]);
     setSearchLoading(true);
     axios.get("/api/chart/getChartData")
       .then(
         res => {
           setSearchResult(res.data);
-          console.log(res.data)
           setSearchLoading(false);
         }
       )
       .catch(e => console.log(e))
   }
-
-
 
 
   return (
@@ -65,7 +63,7 @@ function HomeView() {
         <section id="section">
           <SearchBox setSearchResult={setSearchResult} setSearchLoading={setSearchLoading}/>
 
-          {searchResult && searchResult.deviceData && (
+          {searchResult && searchResult.deviceData != null && (
             searchLoading ?
               <div className="card-box">
                 <Card cardSetting={{ "title": "CPU 평균 온도", "value": `로딩 중 . . .` }} />

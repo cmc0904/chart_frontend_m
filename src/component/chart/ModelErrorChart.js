@@ -12,6 +12,8 @@ function ModelErrorChart({ showedChartData }) {
     useEffect(()=>{
         am4core.useTheme(am4themes_animated);
         const chart = am4core.create("model-disorder", am4charts.XYChart);
+        chart.exporting.timeoutDelay = 5000;
+
         chart.autoMargins = false; // 오토마진 비활성화
         chart.data = showedChartData.chartData;
         chart.exporting.menu = new am4core.ExportMenu();

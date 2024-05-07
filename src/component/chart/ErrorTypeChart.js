@@ -12,6 +12,9 @@ function ErrorTypeChart({ showedChartData }) {
     useEffect(()=>{
         am4core.useTheme(am4themes_animated);
         let chart = am4core.create("disorder-type", am4charts.PieChart);
+        chart.exporting.timeoutDelay = 5000;
+
+
         chart.exporting.menu = new am4core.ExportMenu();
         chart.exporting.menu.align = "right";
         chart.exporting.menu.verticalAlign = "bottom";

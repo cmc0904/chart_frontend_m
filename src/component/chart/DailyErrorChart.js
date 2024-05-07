@@ -15,6 +15,9 @@ function DailyErrorChart({ showedChartData }) {
         am4core.useTheme(am4themes_animated);
 
         var chart = am4core.create("day-disorder", am4charts.XYChart);
+
+        chart.exporting.timeoutDelay = 5000;
+
         chart.exporting.menu = new am4core.ExportMenu();
         chart.exporting.filePrefix = "일별_장애_발생_추이"; 
         chart.exporting.menu.align = "right";
